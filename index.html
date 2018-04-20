@@ -303,7 +303,7 @@
       
         
           
-            <pre><code>Linux系统中,软件通常以源代码或者编译包的形式提供.
+            <h2 id="引用-https-www-linuxidc-com-Linux-2015-01-111216-htm"><a href="#引用-https-www-linuxidc-com-Linux-2015-01-111216-htm" class="headerlink" title="引用: https://www.linuxidc.com/Linux/2015-01/111216.htm"></a>引用: <a href="https://www.linuxidc.com/Linux/2015-01/111216.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-01/111216.htm</a></h2><pre><code>Linux系统中,软件通常以源代码或者编译包的形式提供.
 
 (1)源代码需要编译为二进制的机器码才能够使用,安装比较
 耗时,不过您可以自行调节编译选项,决定需要的功能或组
@@ -313,7 +313,7 @@
 将软件拷贝到系统中就可以了.考虑到预编译软件包的适用性
 ,预编译软件通常不会针对某种硬件平台优化.它所包含的功能
 和组件也是通用的组合.
-</code></pre><h2 id="引用-https-www-linuxidc-com-Linux-2015-01-111216-htm"><a href="#引用-https-www-linuxidc-com-Linux-2015-01-111216-htm" class="headerlink" title="引用: https://www.linuxidc.com/Linux/2015-01/111216.htm"></a>引用: <a href="https://www.linuxidc.com/Linux/2015-01/111216.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-01/111216.htm</a></h2><h2 id="1-deb包的安装方式"><a href="#1-deb包的安装方式" class="headerlink" title="1 deb包的安装方式"></a>1 deb包的安装方式</h2><pre><code>deb是debian系Linux的包管理方式,Ubuntu是属于debian系的
+</code></pre><h2 id="1-deb包的安装方式"><a href="#1-deb包的安装方式" class="headerlink" title="1 deb包的安装方式"></a>1 deb包的安装方式</h2><pre><code>deb是debian系Linux的包管理方式,Ubuntu是属于debian系的
 Linux发行版,所以默认支持这种软件安装方式,当下载到一个
 deb格式的软件后,在终端输入这个命令就能安装:
 
@@ -327,18 +327,14 @@ sudo dpkg -i *.deb
 编译安装,一般开源的软件都会使用tar.gz压缩档来进行发布,当然
 还有其他的形式,拿到源代码的压缩文档,把它解压缩到/tmp目录下
 ,进入/tmp/软件目录,然后执行下三个命令:
-
-* 1 ./configure
-* 2 make 
-* 3 sudo make install
-
-在第一步./configure时可能会提示说某某软件找不到,例如提示&quot;libgnome&quot;
-这个开发包找不到,那就把libgnome这个关键词copy,然后打开新立得软件管
-理器,在里面搜索libgnome这个关键词,就会找到libgnome相关的项目,把前
-面有个ubuntu符号的libgnome包(注意:同样需要安装dev包,但可以不装doc
-包)全部安装,通过这个方法把./configure过程中缺失的开发包全部装上就
-ok了,第一步顺利通过,第二三步基本问题不大.
-</code></pre><h2 id="3-apt-get安装方法"><a href="#3-apt-get安装方法" class="headerlink" title="3 apt-get安装方法"></a>3 apt-get安装方法</h2><pre><code>ubuntu世界有许多软件源,在系统安装篇已经介绍过如何添加源,apt-get的基本
+</code></pre><ul>
+<li>1 ./configure</li>
+<li>2 make </li>
+<li><p>3 sudo make install</p>
+<p>在第一步./configure时可能会提示说某某软件找不到,例如提示”libgnome”<br>这个开发包找不到,那就把libgnome这个关键词copy,然后打开新立得软件管<br>理器,在里面搜索libgnome这个关键词,就会找到libgnome相关的项目,把前<br>面有个ubuntu符号的libgnome包(注意:同样需要安装dev包,但可以不装doc<br>包)全部安装,通过这个方法把./configure过程中缺失的开发包全部装上就<br>ok了,第一步顺利通过,第二三步基本问题不大.</p>
+</li>
+</ul>
+<h2 id="3-apt-get安装方法"><a href="#3-apt-get安装方法" class="headerlink" title="3 apt-get安装方法"></a>3 apt-get安装方法</h2><pre><code>ubuntu世界有许多软件源,在系统安装篇已经介绍过如何添加源,apt-get的基本
 软件安装命令是:
 
 sudo apt-get install 软件名
