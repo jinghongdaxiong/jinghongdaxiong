@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="引用: https://www.linuxidc.com/Linux/2015-01/111216.htmLinux系统中,软件通常以源代码或者编译包的形式提供.  (1)源代码需要编译为二进制的机器码才能够使用,安装比较 耗时,不过您可以自行调节编译选项,决定需要的功能或组 件,或者针对硬件平台做一些优化.  (2)预编译的软件包,通常是由软件的发布者进行编译,您只要 将软件拷贝到系统中就可以了">
+<meta name="description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu Linux下安装软件方法">
-<meta property="og:url" content="http://yoursite.com/2018/04/20/Ubuntu-Linux下安装软件方法/index.html">
+<meta property="og:title" content="CentOS防火墙设置与端口开放的方法">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/index.html">
 <meta property="og:site_name" content="I want jingjing">
-<meta property="og:description" content="引用: https://www.linuxidc.com/Linux/2015-01/111216.htmLinux系统中,软件通常以源代码或者编译包的形式提供.  (1)源代码需要编译为二进制的机器码才能够使用,安装比较 耗时,不过您可以自行调节编译选项,决定需要的功能或组 件,或者针对硬件平台做一些优化.  (2)预编译的软件包,通常是由软件的发布者进行编译,您只要 将软件拷贝到系统中就可以了">
+<meta property="og:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
 <meta property="og:locale" content="zh.">
-<meta property="og:updated_time" content="2018-04-20T08:31:29.121Z">
+<meta property="og:updated_time" content="2018-04-23T06:43:59.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu Linux下安装软件方法">
-<meta name="twitter:description" content="引用: https://www.linuxidc.com/Linux/2015-01/111216.htmLinux系统中,软件通常以源代码或者编译包的形式提供.  (1)源代码需要编译为二进制的机器码才能够使用,安装比较 耗时,不过您可以自行调节编译选项,决定需要的功能或组 件,或者针对硬件平台做一些优化.  (2)预编译的软件包,通常是由软件的发布者进行编译,您只要 将软件拷贝到系统中就可以了">
+<meta name="twitter:title" content="CentOS防火墙设置与端口开放的方法">
+<meta name="twitter:description" content="Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口 的开启还是要从两种情况来说明的,即iptables和firewalld. 更多内容请参考Rehat官网 iptables开启防火墙(重启后永久有效) : chkconfig iptables on  关闭防火墙(重启后永久有效) : chkconfig iptables off  开启防火墙(即时生效,">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/20/Ubuntu-Linux下安装软件方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/"/>
 
 
 
 
 
-  <title>Ubuntu Linux下安装软件方法 | I want jingjing</title>
+  <title>CentOS防火墙设置与端口开放的方法 | I want jingjing</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/Ubuntu-Linux下安装软件方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/CentOS防火墙设置与端口开放的方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiong zi xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu Linux下安装软件方法</h1>
+          <h1 class="post-title" itemprop="name headline">CentOS防火墙设置与端口开放的方法</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T15:02:03+08:00">
-                2018-04-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T14:42:25+08:00">
+                2018-04-23
               </time>
             
 
@@ -299,79 +299,140 @@
       
 
       
-        <h2 id="引用-https-www-linuxidc-com-Linux-2015-01-111216-htm"><a href="#引用-https-www-linuxidc-com-Linux-2015-01-111216-htm" class="headerlink" title="引用: https://www.linuxidc.com/Linux/2015-01/111216.htm"></a>引用: <a href="https://www.linuxidc.com/Linux/2015-01/111216.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-01/111216.htm</a></h2><pre><code>Linux系统中,软件通常以源代码或者编译包的形式提供.
+        <pre><code>Centos升级到7后,内置的防火墙已经从iptables变成了firewalld,所以,端口
+的开启还是要从两种情况来说明的,即iptables和firewalld.
+更多内容请参考Rehat官网
+</code></pre><h3 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h3><pre><code>开启防火墙(重启后永久有效) : chkconfig iptables on
 
-(1)源代码需要编译为二进制的机器码才能够使用,安装比较
-耗时,不过您可以自行调节编译选项,决定需要的功能或组
-件,或者针对硬件平台做一些优化.
+关闭防火墙(重启后永久有效) : chkconfig iptables off
 
-(2)预编译的软件包,通常是由软件的发布者进行编译,您只要
-将软件拷贝到系统中就可以了.考虑到预编译软件包的适用性
-,预编译软件通常不会针对某种硬件平台优化.它所包含的功能
-和组件也是通用的组合.
-</code></pre><h2 id="1-deb包的安装方式"><a href="#1-deb包的安装方式" class="headerlink" title="1 deb包的安装方式"></a>1 deb包的安装方式</h2><pre><code>deb是debian系Linux的包管理方式,Ubuntu是属于debian系的
-Linux发行版,所以默认支持这种软件安装方式,当下载到一个
-deb格式的软件后,在终端输入这个命令就能安装:
+开启防火墙(即时生效,重启后失效) : service iptables start
 
-sudo dpkg -i *.deb
+关闭防火墙(即时生效,重启后失效) : service iptables stop
 
-或者直接双击安装.
-</code></pre><h2 id="2-编译安装方式"><a href="#2-编译安装方式" class="headerlink" title="2 编译安装方式"></a>2 编译安装方式</h2><pre><code>(小贴士: 使用编译安装前,需要建立编译环境,使用一下命令建立
-基本的编译环境: sudo apt-get install bulid-essential)
+重启防火墙 :service iptables restartd
 
-在Linux的世界,有很多软件只提供了源代码给你,需要你自己进行
-编译安装,一般开源的软件都会使用tar.gz压缩档来进行发布,当然
-还有其他的形式,拿到源代码的压缩文档,把它解压缩到/tmp目录下
-,进入/tmp/软件目录,然后执行下三个命令:
-</code></pre><ul>
-<li>1 ./configure</li>
-<li>2 make </li>
-<li><p>3 sudo make install</p>
-<p>在第一步./configure时可能会提示说某某软件找不到,例如提示”libgnome”<br>这个开发包找不到,那就把libgnome这个关键词copy,然后打开新立得软件管<br>理器,在里面搜索libgnome这个关键词,就会找到libgnome相关的项目,把前<br>面有个ubuntu符号的libgnome包(注意:同样需要安装dev包,但可以不装doc<br>包)全部安装,通过这个方法把./configure过程中缺失的开发包全部装上就<br>ok了,第一步顺利通过,第二三步基本问题不大.</p>
-</li>
-</ul>
-<h2 id="3-apt-get安装方法"><a href="#3-apt-get安装方法" class="headerlink" title="3 apt-get安装方法"></a>3 apt-get安装方法</h2><pre><code>ubuntu世界有许多软件源,在系统安装篇已经介绍过如何添加源,apt-get的基本
-软件安装命令是:
+查看打开的端口
+/etc/init.d/iptables status
 
-sudo apt-get install 软件名
-</code></pre><h2 id="4-新立得软件包管理"><a href="#4-新立得软件包管理" class="headerlink" title="4 新立得软件包管理"></a>4 新立得软件包管理</h2><pre><code>打开: 系统 --系统管理--新立得软件包管理,这个工具其实跟apt一样,可以搜索
-,下载,安装ubuntu源里的软件,具体安装方式很简单,看看界面应该会懂,就不详细
-介绍了.
-</code></pre><h2 id="5-二进制包的安装方式"><a href="#5-二进制包的安装方式" class="headerlink" title="5 二进制包的安装方式"></a>5 二进制包的安装方式</h2><pre><code>有不少开源的商业软件都会采用这种方式发布Linux软件,例如google earth,拿到
-二进制软件后,把它放到/tmp目录,在终端下进入安装目录,在安装目录下执行:
+打开某个端口(以8080为例)
 
-./软件名
+(1) 开启端口
 
-然后按照一步步提示,就能安装该软件.例如安装realplayer播放器:你直接到官网
-http://www.real.com/linux 下载RealPayer的安装包,安装包是.bin格式,用如下
-命令安装:
+iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
 
-chomd +x RealPlayer11GOLD.bin
+(2)保存并重启防火墙
 
-./RealPlayer11GOLD.bin
-</code></pre><h2 id="6-rpm包的安装方式"><a href="#6-rpm包的安装方式" class="headerlink" title="6 rpm包的安装方式"></a>6 rpm包的安装方式</h2><pre><code>rpm 包是deb包最常见的一种管理方式,但ubuntu同样可以使用rpm的软件资源.首先
-我们安装一个rpm转deb的软件
+/etc/rc.d/init.d/iptables save
+/etc/init.d/iptables restart
 
-sudo apt-get install alien
+打开49152~65534之间的端口
 
-然后就可以对rpm格式的软件转换成deb格式了:
+iptables -A INPUT -p tcp --dport 49152:65534 -j ACCEPT
 
-alien -d *.rpm
+同样,这里需要对设置进行保存,并重启防火墙.
 
-然后就可以用deb的安装方式进行软件安装.也可以不需转换而直接对rpm包进行安装:
+其他打开方式
 
-alien -i *.rpm
+我们还可以通过修改/etc/sysconfig/iptables文件方式开启端口,如下
 
-更多的alien使用方法可以用-h参数查看相应说明文档.
-</code></pre><h2 id="7-其他安装方式"><a href="#7-其他安装方式" class="headerlink" title="7 其他安装方式"></a>7 其他安装方式</h2><pre><code>其他安装方式一般还有脚本安装方式,这类软件,你会在安装目录下发现类似后缀名的文件
-,如: .sh .py .run等的,有的甚至连后缀名都没有,直接一个INSTALL文件,对于这种软件,
-可以尝试以下几种方式安装:
-最简单的就是直接在软件目录下输入: ./软件名*(注意有一个*号,那是一般可以通配所有
-后缀名)
-或者: sh 软件名.sh
-或者: python软件名.py
+vi /etc/sysconfig/iptables
 
-TIP:如以上方法均无法安装软件,可以参考软件源代码下面的README文档.
+然后再文件中增加一行
+
+-A RH-Firewall-1-INPUT -m state -state NEW -m tcp -p tcp -dport 8080 -j ACCEPT
+
+参数说明:
+
+-A 参数就看成是添加一条规则
+-p 指定是什么协议,我们常用的tcp协议,当然也有udp,例如53端口的DNS
+-dport 就是目标端口,当数据从外部进入服务器为目标端口
+-sport 数据从服务器出去,则为数据源端口使用
+-j 就是指定是ACCEPT -接收或者DROP不接收
+</code></pre><h3 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h3><pre><code>Centos7默认安装了firewalld,如果没有安装的话,可以使用
+yum install firewalld firewalld-config进行安装.
+
+1启动防火墙
+
+systemctl start firewalld
+
+2 禁用防火墙
+
+systemctl stop firewalld
+
+3 设置开机启动
+
+systemctl enable firewalld
+
+4 停止并禁用开机启动
+
+systemctl disable firewalld
+
+5 重启防火墙
+
+firewall-cmd --reload
+
+6 查看状态
+
+systemctl status firewalld或者 firewall-cmd --state
+
+7查看版本
+
+firewall-cmd --version
+
+8查看帮助
+
+firewall-cmd --help
+
+9查看区域信息
+
+firewall-cmd --get-active-zones
+
+10查看指定接口所属区域信息
+
+firewall-cmd --get-zone-of-interface=eth0
+
+11 拒绝所有包
+
+firewall-cmd --panic-on
+
+12 取消拒绝状态
+
+firewall-cmd --panic-off
+
+13 查看是否拒绝
+
+firewall-cmd --query-panic
+
+14将接口添加到区域(默认接口都在public)
+
+firewall-cmd --zone=public --add-interface=eth0(永久生效再加上 --permanent 然后reload防火墙)
+
+15 设置默认接口区域
+
+firewall-cmd --set-default-zone=public(立即生效,无需重启)
+
+16 更新防火墙规则
+
+firewall-cmd --reload或firewall-cmd --complete-reload(两
+者的区别就是第一个无需断开连接,就是firewalld特性之一动态
+添加规则,第二个需要断开连接,类似重启服务)
+
+17 查看指定区域所有打开的端口  
+
+firewall-cmd --zone=public --list-ports
+
+18指定区域打开端口(记得重启防火墙)
+
+firewall-comd --zone=public --add-port=80/tcp(永久生效再加上 --permanent)
+
+说明:
+-zone 作用域
+-add-port=8080/tcp 添加端口,格式为:端口/通讯协议
+-permanent #永久生效,没有此参数重启后失效
+
+参考文章：
+http://havee.me/linux/2015-01/using-firewalls-on-centos-7.html
 </code></pre>
       
     </div>
@@ -396,8 +457,8 @@ TIP:如以上方法均无法安装软件,可以参考软件源代码下面的REA
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/20/Learn-Linux/" rel="next" title="Learn Linux">
-                <i class="fa fa-chevron-left"></i> Learn Linux
+              <a href="/2018/04/23/Ubuntu-远程连接22端口/" rel="next" title="Ubuntu 远程连接22端口">
+                <i class="fa fa-chevron-left"></i> Ubuntu 远程连接22端口
               </a>
             
           </div>
@@ -405,10 +466,6 @@ TIP:如以上方法均无法安装软件,可以参考软件源代码下面的REA
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/20/Kotlin/" rel="prev" title="Kotlin">
-                Kotlin <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +579,7 @@ TIP:如以上方法均无法安装软件,可以参考软件源代码下面的REA
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用-https-www-linuxidc-com-Linux-2015-01-111216-htm"><span class="nav-number">1.</span> <span class="nav-text">引用: https://www.linuxidc.com/Linux/2015-01/111216.htm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-deb包的安装方式"><span class="nav-number">2.</span> <span class="nav-text">1 deb包的安装方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-编译安装方式"><span class="nav-number">3.</span> <span class="nav-text">2 编译安装方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-apt-get安装方法"><span class="nav-number">4.</span> <span class="nav-text">3 apt-get安装方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-新立得软件包管理"><span class="nav-number">5.</span> <span class="nav-text">4 新立得软件包管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-二进制包的安装方式"><span class="nav-number">6.</span> <span class="nav-text">5 二进制包的安装方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-rpm包的安装方式"><span class="nav-number">7.</span> <span class="nav-text">6 rpm包的安装方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-其他安装方式"><span class="nav-number">8.</span> <span class="nav-text">7 其他安装方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables"><span class="nav-number">1.</span> <span class="nav-text">iptables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firewalld"><span class="nav-number">2.</span> <span class="nav-text">firewalld</span></a></li></ol></div>
             
 
           </div>
