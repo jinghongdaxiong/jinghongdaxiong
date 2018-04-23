@@ -715,7 +715,41 @@ windows客户端用putty连接命令shell模式
 <p>这种方式适用于所有的Linux发行版</p>
 </li>
 </ul>
-<h2 id="ubuntu-安装-apt-get-install-lrzsz-y"><a href="#ubuntu-安装-apt-get-install-lrzsz-y" class="headerlink" title="ubuntu 安装 apt-get install lrzsz y"></a>ubuntu 安装 apt-get install lrzsz y</h2>
+<h2 id="10-ubuntu-安装-上传下载工具lrzsz"><a href="#10-ubuntu-安装-上传下载工具lrzsz" class="headerlink" title="10 ubuntu 安装 上传下载工具lrzsz"></a>10 ubuntu 安装 上传下载工具lrzsz</h2><pre><code>apt-get install lrzsz y
+</code></pre><h2 id="11-Linux中运行-sh-Shell脚本-文件"><a href="#11-Linux中运行-sh-Shell脚本-文件" class="headerlink" title="11 Linux中运行.sh(Shell脚本)文件"></a>11 Linux中运行.sh(Shell脚本)文件</h2><pre><code>有两种方法:
+
+1 直接./加文件名.sh,如运行hello.sh为./hello.sh[hello.sh必须有x权限]
+
+2 直接sh加上文件名.sh,如运行hello.sh为sh hello.sh[hello.sh]可以没有x权限]
+
+步骤
+
+1 cd到.sh文件所在目录
+
+2 给.sh文件添加x执行权限,已hello.sh文件为例
+chmod u+x hello.sh
+
+3 执行 ./hello.sh 或者 sh hello.sh
+
+备注 绝对路径执行*.sh以hello.sh 为例
+
+./home/test/shell/hello.sh ,可以这样运行时因为当前登录用户是root,当前路径
+是在/下,.代表当前路径.
+
+/home/test/shll/hello.sh,此路径为真实绝对路径,但此方法运行的条件是该用户对
+hello.sh拥有执行权限,即已执行chmod u+x hello.sh
+
+sh/home/test/shell/hello.sh,用sh命令执行shell脚本不需要该用户拥有hello.sh的执行
+权限即可执行.
+</code></pre><h2 id="12-zip-或unzip的安装和使用"><a href="#12-zip-或unzip的安装和使用" class="headerlink" title="12 zip 或unzip的安装和使用"></a>12 zip 或unzip的安装和使用</h2><pre><code>Linux系统没有自带的压缩解压缩工具;需要我们自己安装;当用到zip或者unzip如果没有安装
+就会出现unzip:Command Not Found 或 zip:Command Not Found;
+
+1 apt-get安装:
+apt-get install zip
+
+2 yum安装
+yum install -y unzip zip
+</code></pre>
           
         
       
